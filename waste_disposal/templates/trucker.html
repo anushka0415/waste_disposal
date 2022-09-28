@@ -1,0 +1,55 @@
+{% extends 'home.html' %}
+<style type="text/css">
+    html{
+        overflow-y: hidden;
+    }
+</style>
+{% block head %}
+
+{% endblock %} 
+ 
+{% block body %}
+<div class="header1">
+    <div class="row">
+        <div class="col-8" ></div>
+        <div class="col-4 ">
+            <div style="float: right; margin: 10px;">
+        <button type="button" class="btn btn-light"><a href="/">Citizen</a></button>
+        <button type="button" class="btn btn-light">Log in</button>
+        <button type="button" class="btn btn-light">Create an account</button></div>
+        </div>
+    </div>
+
+<div class="middle">
+    <div class="row">
+        <h3 class="logo">Trucker</h3>
+    </div>
+<div class="row">
+    <div class="text-center">
+        <h1 style="font-size: 30px; margin-top: 60px; color:rgb(8, 8, 8); font-weight: 1000;">Check for your deliveries!</h1>
+    </div>
+</div>
+<!-- <div class="row">
+    <div class="sub_header">
+        Enter your delivery location to get started
+    </div>
+</div> -->
+        
+<div class="row">
+    
+<div class="col-md-2 offset-3">
+    <button type="button" class="btn btn-danger" style="float:right;margin:auto;margin-top: 30px; min-height: 45px; width: 140px; font-size: 17px;"><a href="/schedule2">Bio-Degradable</a></button>
+</div>
+<div class="col-md-2">
+    <button type="button" class="btn btn-danger" style="display: flex;justify-content: center;margin:auto;margin-top: 30px; min-height: 45px; width: 140px; font-size: 17px;"><a href="/schedule2">E-Waste</a></button>
+</div>
+<div class="col-md-2 ">
+    <button type="button" class="btn btn-danger" style="margin:auto;margin-top: 30px; min-height: 45px; width: 140px; font-size: 17px;"><a href="/schedule2">Non-Bio-Degradable</a></button>
+</div>
+    
+
+
+</div>
+</div>
+</div>	
+{% endblock %} 

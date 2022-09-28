@@ -1,0 +1,73 @@
+{% extends 'home.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+<div class="header">
+    <div class="row">
+        <div class="col-8"></div>
+        <div class="col-4 ">
+            <div style="float: right; margin: 10px;">
+                <button type="button" class="btn btn-outline-light"><a href="/trucker"><b>Trucker</b></a></button>
+                <button type="button" class="btn btn-outline-light"><a href="#"><b>Log in</b></a></button>
+                <button type="button" class="btn btn-outline-light"><a href="#"><b>Create an account</b></a></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="middle">
+        <div class="row">
+            <h3 class="logo">Citizen</h3>
+        </div>
+        <div class="row">
+            <div class="text-center">
+                <h1 style="font-size: 30px; margin-top: 60px; color:rgb(255, 255, 255); font-weight: 600;">Schedule your
+                    waste pickup today!</h1>
+            </div>
+        </div>
+
+        <div class="row">
+
+
+            <button type="button" class="btn btn-warning"
+                style="margin:auto;margin-top: 30px; min-height: 45px; width: 140px; font-size: 17px;"><a
+                    href="/schedule2"><b>Schedule Now</b></a></button>
+
+
+        </div>
+    </div>
+</div>
+
+<div class="mid" style="background-color: white;">
+    <div class="mid_heading">
+        How Pickup Works
+    </div>
+    <div class="mid_sub_heading">
+        Discarding your waste has never been this easy
+    </div>
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-sm-4">
+                <img src="../static/images/waste.png" id="icon" >
+                <div class="cap"><b>Explore Waste Categories</b> <br>that you want to dump</div>
+            </div>
+            <div class="col-sm-4">
+                <img src="../static/images/schedule.jpg" id="icon">
+                <div class="cap"> Schedule <b>Pickup<br></b>as per your <b>convenience</b></div>
+            </div>
+            <div class="col-sm-4">
+                <img src="../static/images/pickup.png" id="icon">
+                <div class="cap">Discard your<br><b>Waste</b></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="wrapper">
+    <div class="container text-center">
+
+    </div>
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+</head>
+<body>
+    <div class="container my-3">
+    <h2>collection requests</h2>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">firstname</th>
+            <th scope="col">lastname</th>
+            <th scope="col">address</th>
+            <th scope="col">email</th>
+            <th scope="col">waste_type</th>
+            <th scope="col">city</th>
+            <th scope="col">date</th>
+            <th scope="col">time</th>
+            <th scope="col">quantity</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for waste in allWaste %}
+          <tr>
+            <th scope="row">1</th>
+            <td>{{waste.firstname}}</td>
+            <td>{{waste.lastname}}</td>
+            <td>{{waste.address}}</td>
+            <td>{{waste.email}}</td>
+            <td>{{waste.waste_type}}</td>
+            <td>{{waste.city}}</td>
+            <td>{{waste.date}}</td>
+            <td>{{waste.time}}</td>
+            <td>{{waste.quantity}}</td>
+          </tr>
+          {% endfor %}
+         
+          
+        </tbody>
+      </table>
+    </div>
+</body>
+
+<head>
+</html>

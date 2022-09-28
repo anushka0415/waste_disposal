@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Schedule Pickup</title>
+    <link rel="stylesheet" href="../static/css/bootstrap.css" />
+
+    <style type="text/css">
+      html{
+        overflow: hidden;
+      }
+      .gradient-custom {
+        background: -webkit-linear-gradient(left, #3931af, #00c6ff);
+        padding: 50px;
+        height: 100vh;
+      }
+      .card-custom {
+        border-bottom-left-radius: 10% 50%;
+        border-top-left-radius: 10% 50%;
+        background-color: #f8f9fa;
+      }
+      .cen{
+        display: flex;
+        flex-direction:column;
+        justify-content: center;
+      }
+
+      .input-custom {
+        background-color: white;
+      }
+
+      .white-text {
+        color: hsl(52, 0%, 98%);
+        font-weight: 100;
+        font-size: 14px;
+      }
+
+      .back-button {
+        background-color: hsl(52, 0%, 98%);
+        font-weight: 700;
+        color: black;
+        margin-top: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="row gradient-custom" style="min-height: 100%">
+      <div class="col-md-3 cen">
+        <div style="margin-top: 50px; margin-left: 10px" class="text-center">
+          <h3 class="mt-3 text-white">Welcome</h3>
+          <h3 class="mt-5 text-white">
+            You are 30 seconds away from scheduling your pickup!
+          </h3>
+        </div>
+        <div class="text-center">
+          <button type="submit" class="btn btn-white btn-rounded back-button"><a href="home.html">
+            Go back</a>
+          </button>
+        </div>
+      </div>
+
+      <div class="col-md-9 cen">
+        <div class="card card-custom pb-4">
+          <div class="card-body mt-0 mx-5">
+            <div class="text-center mb-3 pb-2 mt-3">
+              <h4 style="color: #495057">Pickup Details</h4>
+            </div>
+            <div class="card-body mt-0 mx-5">
+              <form class="mb-0">
+                <div class="row mb-4">
+                  <button
+                    type="submit"
+                    id="demo"
+                    class="btn btn-primary btn-rounded"
+                    style="background-color: #0062cc">
+                    Get location
+                  </button>
+                </div>
+                <div class="row mb-4">
+                  <div class="col">
+                    <div class="form-outline">
+                      <input
+                        type="text"
+                        id="form9Example1"
+                        class="form-control input-custom"
+                        placeholder="First Name"
+                      />
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="form-outline">
+                      <input
+                        type="text"
+                        id="form9Example2"
+                        class="form-control input-custom"
+                        placeholder="Last Name"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="row mb-4">
+                  <div class="col">
+                    <div class="form-outline">
+                      <input
+                        type="text"
+                        id="form9Example3"
+                        class="form-control input-custom"
+                        placeholder="City"
+                      />
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="form-outline">
+                      <input
+                        type="text"
+                        id="form9Example4"
+                        class="form-control input-custom"
+                        placeholder="Zip"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="row mb-4">
+                  <div class="col">
+                    <div class="form-outline">
+                      <input
+                        type="text"
+                        id="form9Example6"
+                        class="form-control input-custom"
+                        placeholder="Address"
+                      />
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="form-outline">
+                      <input
+                        type="email"
+                        id="typeEmail"
+                        class="form-control input-custom"
+                        placeholder="Email"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="float-end">
+                  <!-- Submit button -->
+                  <button
+                    type="submit"
+                    class="btn btn-primary btn-rounded"
+                    style="background-color: #0062cc"
+                  >
+                    Place order
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="map" style="width: 100%; height: 400px"></div>
+    <script>
+      x = document.getElementById("demo");
+      function getLocation() {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+          x.innerHTML = "Geolocation is not supported by this browser.";
+        }
+    
+    
+      }
+    
+      function showPosition(position) {
+        x.innerHTML = "Latitude: " + position.coords.latitude +
+        "<br>Longitude: " + position.coords.longitude;
+        // Initialize and add the map
+        // The location of Uluru
+        const uluru = { lat: position.coords.latitude, lng: position.coords.longitude };
+        // The map, centered at Uluru
+        const map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 4,
+          center: uluru,
+        });
+        // The marker, positioned at Uluru
+        const marker = new google.maps.Marker({
+          position: uluru,
+          map: map,
+        });
+      }
+      x.addEventListener("click",getLocation)
+    </script>
+<script src="//maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&key=AIzaSyBPumFitqUXtRI9ET9HhI4GrXcRFa7062E" async="" defer="defer" type="text/javascript"></script>
+
+  </body>
+</html>
